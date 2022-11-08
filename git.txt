@@ -1,0 +1,76 @@
+git --version
+
+git config --global user.name "akhil"
+git config --global user.email "akhil28021996.18@gmail.com"
+git config --list
+
+git init
+git status
+git add .
+git commit -m "inital commit"
+git log
+git log --oneline
+
+first commit id: 77gh89
+second: 98u6y8
+third: 900cfcf
+
+- Assume we're in third commit but we want the previous version(second):
+git checkout 98u6y8
+git commit -m "getting back to previous commit. this is current version                                on which we want to work on"
+- Now, second commit becomes current version with new commit.
+- To reset the changes we made by getting from third to second commit and making second as current version we use reset:
+git  reset  HEAD  index.html  --> the file is in unstaged area and shows modified if we see the status. so to discard the changes in working directory use:
+git checkout  --  index.html
+- Now, we have restored to the end third commit. now third becomes current version as before.
+
+NOte:
+-------
+* git reset <file> : unstage a staged file, but leave working directory unchanged.
+* git reset : reset the staging area to the last commit without disturbing the working directory.
+
+Set the local Git repository to set its remote origin:
+    At the prompt, type the following to set up your local repository to link to your online Git repository:
+- git remote add origin <repository URL>
+
+Pushing your commits to the online repository:
+    At the prompt, type the following to push the commits to the online repository:
+- git push -u origin master
+
+Cloning an online repository:
+    To clone an online repository to your computer, type the following at the prompt:
+- git clone <repository URL>
+
+Conclusions:
+* In this exercise you have learnt to set up an online Git repository, synchronize your local repository with the remote repository, and clone an online repository.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

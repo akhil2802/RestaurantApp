@@ -43,8 +43,26 @@ Cloning an online repository:
 
 Conclusions:
 * In this exercise you have learnt to set up an online Git repository, synchronize your local repository with the remote repository, and clone an online repository.
+______________________________________________________________________
 
+Node.js and NPM:
+------------------------
+package.json file: affords you a lot of great things like:
+- it serves as documentation for what packages your proect depends on.
+- it allows you to specify the versions of a packge that your project can use using semantic versioning rules.
+- Make your build reproducible, which means that its way easier to share with other develoeprs.
 
+Initializing package.json file:
+- npm init --> asks for details and provide all of them.
+
+Installing a liteserver module:
+- npm install lite-server  --save-dev
+here, --save-dev specifies this liteserver is used for development dependency for our project. it will be mentioned in package.json file.
+- If we are installing node module on which our proect directly dependent on then we install it by just saying "--save" option not --save-dev. 
+
+Exclude some of the folder, files while commiting to online git repository:
+- here, we can exclude node_module folder which is being submitted to online git because we can get all the modules of node_module installed for us just by saying npm install.. this installs all the nodemodules present inside package.json file. If we say git commit then this node_modules folder wont be commited to repo.
+-  
 
 
 

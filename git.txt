@@ -109,6 +109,20 @@ History:
    41  git status
    42  history
 
+   _________________________
+
+   Scaffloding Angular Application:
+   ---------------------
+   npm install -g @angular/cli
+
+   ng new conFusion --style=scss
+
+   cd conFusion
+
+   ng serve -open (or) 
+   ng serve -o
+
+   
 
 
 

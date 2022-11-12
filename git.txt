@@ -62,7 +62,54 @@ here, --save-dev specifies this liteserver is used for development dependency fo
 
 Exclude some of the folder, files while commiting to online git repository:
 - here, we can exclude node_module folder which is being submitted to online git because we can get all the modules of node_module installed for us just by saying npm install.. this installs all the nodemodules present inside package.json file. If we say git commit then this node_modules folder wont be commited to repo.
--  
+-  create .gitignore file and mention node_modules inside this file. This will ignore node_modules folder from commit.
+
+History:
+-----------
+ 1  cd Desktop
+    2  ls
+    3  cd MeanStack_RestaurantApp/
+    4  git status
+    5  git push -u origin main
+    6  git status
+    7  git log --oneline
+    8  cd Desktop
+    9  cd MeanStack_RestaurantApp/
+   10  ls
+   11  git status
+   12  git add .
+   13  git commit -m "git text file added"
+   14  git push
+   15  git status
+   16  git status
+   17  ng --version
+   18  npm init
+   19  npm install lite-server --save-dev
+   20  node update
+   21  node help
+   22  node install --update
+   23  n prune
+   24  npm install -g n
+   25  npm -help
+   26  npm update node
+   27  node -v
+   28  npm install -g npm
+   29  npm install lite-server --save-dev
+   30  npm fund
+   31  npm start
+   32  ls
+   33  touch index.html
+   34  npm start
+   35  git status
+   36  git add .
+   37  git log --oneline"
+   38  git log --oneline
+   39  git commit -m "sample second commit"
+   40  git push -u origin main
+   41  git status
+   42  history
+
+
 
 
 

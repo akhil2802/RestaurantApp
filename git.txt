@@ -121,6 +121,7 @@ History:
 
    ng serve -open (or) 
    ng serve -o
+   
 
    
 

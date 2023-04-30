@@ -8,6 +8,10 @@ import { DISHES } from '../shared/dishes';
 })
 export class DishService {
 
+  getDish(id: any): Dish {
+    return DISHES.filter((dish) => dish.id === id)[0];
+  }
+
   constructor() { }
 
   getDishes(): Dish[] {

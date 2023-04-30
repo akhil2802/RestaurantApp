@@ -6,33 +6,50 @@
   fxLayoutAlign.gt-md="space-around center"
   fxLayoutGap="10px"
 >
-  <mat-card *ngIf="dish" fxFlex>
+  <mat-card *ngIf="featuredDish" fxFlex>
     <mat-card-header>
       <div mat-card-avatar></div>
       <mat-card-title>
-        <h3>{{ dish.name | uppercase }}</h3>
+        <h3>{{ featuredDish.name | uppercase }}</h3>
       </mat-card-title>
     </mat-card-header>
-    <img mat-card-image src="{{ dish.image }}" alt="{{ dish.name }}" />
+    <img mat-card-image src="{{ featuredDish.image }}" alt="{{ featuredDish.name }}" />
     <mat-card-content>
-      <p>{{ dish.description }}</p>
+      <p>{{ featuredDish.description }}</p>
     </mat-card-content>
   </mat-card>
 
-  <mat-card *ngIf="promotion" fxFlex>
+  <mat-card *ngIf="featuredPromotion" fxFlex>
     <mat-card-header>
       <div mat-card-avatar></div>
       <mat-card-title>
-        <h3>{{ promotion.name | uppercase }}</h3>
+        <h3>{{ featuredPromotion.name | uppercase }}</h3>
       </mat-card-title>
     </mat-card-header>
     <img
       mat-card-image
-      src="{{ promotion.image }}"
-      alt="{{ promotion.name }}"
+      src="{{ featuredPromotion.image }}"
+      alt="{{ featuredPromotion.name }}"
     />
     <mat-card-content>
-      <p>{{ promotion.description }}</p>
+      <p>{{ featuredPromotion.description }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="featuredLeader" fxFlex>
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title>
+        <h3>{{ featuredLeader.name | uppercase }}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <img
+      mat-card-image
+      src="{{ featuredLeader.image }}"
+      alt="{{ featuredLeader.name }}"
+    />
+    <mat-card-content>
+      <p>{{ featuredLeader.description }}</p>
     </mat-card-content>
   </mat-card>
 </div>

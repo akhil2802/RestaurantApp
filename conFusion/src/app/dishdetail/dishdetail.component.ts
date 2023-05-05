@@ -16,6 +16,7 @@ import { DishService } from '../services/dish.service';
 export class DishdetailComponent implements OnInit {
 
   dish!: Dish;
+  dishCopy!: Dish;
   dishIds!: string[];
   errorMessage!: string;
   prev!: string;
@@ -47,13 +48,12 @@ export class DishdetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dishService.getDishIds().subscribe({
-      next: dishIds => this.dishIds = dishIds,
-      error: errMess => this.errorMessage = errMess
-    });
+    this.dishService.getDishIds().subscribe(
+      dishIds => this.dishIds = dishIds);
+      
     this.route.params.pipe(switchMap((params: Params) => this.dishService.getDish(params['id'])))
     .subscribe({
-      next: dish => { this.dish = dish; this.setPrevNext(dish.id); },
+      next: dish => { this.dish = dish; this.dishCopy = dish; this.setPrevNext(dish.id); },
       error: errMess => this.errorMessage = errMess
     });
   }
@@ -70,9 +70,9 @@ export class DishdetailComponent implements OnInit {
 
   createCommentForm(): void {
     this.commentForm = this.fb.group({
-      author: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)] ],
       rating: ['', Validators.required],
-      comment: ['', Validators.required]
+      comment: ['', Validators.required],
+      author: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)] ]
     });
 
     this.commentForm.valueChanges
@@ -104,7 +104,14 @@ export class DishdetailComponent implements OnInit {
   onSubmit() {
     this.comment = this.commentForm.value;
     this.comment.date = new Date().toISOString();
-    this.dish.comments.push(this.comment);
+    this.dishCopy.comments.push(this.comment);
+    this.dishService.putDish(this.dishCopy)
+      .subscribe({ 
+        next: dish => {
+        this.dish = dish; this.dishCopy = dish;
+      },
+      error: errmess => { this.dish = null as any; this.dishCopy = null as any; this.errorMessage = <any>errmess; }
+    });
     this.commentForm.reset({
       rating: 5,
       comment: '',

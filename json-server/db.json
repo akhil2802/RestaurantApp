@@ -39,6 +39,12 @@
           "comment": "It's your birthday, we're gonna party!",
           "author": "25 Cent",
           "date": "2011-12-02T17:57:28.556094Z"
+        },
+        {
+          "author": "Akhil",
+          "rating": 4,
+          "comment": "Awesome!",
+          "date": "2023-05-05T16:48:40.956Z"
         }
       ]
     },
@@ -81,6 +87,12 @@
           "comment": "It's your birthday, we're gonna party!",
           "author": "25 Cent",
           "date": "2011-12-02T17:57:28.556094Z"
+        },
+        {
+          "rating": 3,
+          "comment": "Mind Taste!",
+          "author": "Ankitha",
+          "date": "2023-05-05T16:54:20.894Z"
         }
       ]
     },

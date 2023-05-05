@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -17,6 +17,7 @@ export class DishdetailComponent implements OnInit {
 
   dish!: Dish;
   dishIds!: string[];
+  errorMessage!: string;
   prev!: string;
   next!: string;
 
@@ -41,14 +42,20 @@ export class DishdetailComponent implements OnInit {
     }
   };
 
-  constructor(private dishService: DishService, private route: ActivatedRoute, private location: Location, private fb: FormBuilder) { 
+  constructor(private dishService: DishService, private route: ActivatedRoute, private location: Location, private fb: FormBuilder, @Inject('BaseURL') public BaseURL) { 
     this.createCommentForm();
   }
 
   ngOnInit() {
-    this.dishService.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
+    this.dishService.getDishIds().subscribe({
+      next: dishIds => this.dishIds = dishIds,
+      error: errMess => this.errorMessage = errMess
+    });
     this.route.params.pipe(switchMap((params: Params) => this.dishService.getDish(params['id'])))
-    .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); });
+    .subscribe({
+      next: dish => { this.dish = dish; this.setPrevNext(dish.id); },
+      error: errMess => this.errorMessage = errMess
+    });
   }
 
   setPrevNext(dishId: string) {

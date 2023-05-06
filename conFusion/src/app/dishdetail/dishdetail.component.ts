@@ -7,11 +7,17 @@ import { switchMap } from 'rxjs';
 import { Comment } from '../shared/comment';
 import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
+import { flyInOut, expand , visibility } from '../animations/app.animation';
 
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.component.html',
-  styleUrls: ['./dishdetail.component.scss']
+  styleUrls: ['./dishdetail.component.scss'],
+  animations: [
+    visibility(),
+    flyInOut(),
+    expand()
+  ]
 })
 export class DishdetailComponent implements OnInit {
 
@@ -25,6 +31,8 @@ export class DishdetailComponent implements OnInit {
   commentForm!: FormGroup;
   comment!: Comment;
   @ViewChild('cform') commentFormDirective;
+
+  visibility = 'shown';
 
   formErrors = {
     'author': '',
@@ -50,12 +58,13 @@ export class DishdetailComponent implements OnInit {
   ngOnInit() {
     this.dishService.getDishIds().subscribe(
       dishIds => this.dishIds = dishIds);
-      
-    this.route.params.pipe(switchMap((params: Params) => this.dishService.getDish(params['id'])))
+
+    this.route.params.pipe(switchMap((params: Params) => { this.visibility = 'hidden'; return this.dishService.getDish(params['id']); }))
     .subscribe({
-      next: dish => { this.dish = dish; this.dishCopy = dish; this.setPrevNext(dish.id); },
-      error: errMess => this.errorMessage = errMess
+      next: dish => { this.dish = dish; this.dishCopy = dish; this.setPrevNext(dish.id); this.visibility = 'shown'; },
+      error: errmess => this.errorMessage = <any>errmess
     });
+  
   }
 
   setPrevNext(dishId: string) {

@@ -230,5 +230,176 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": []
+  "feedback": [
+    {
+      "firstname": "Akhil",
+      "lastname": "Kumar",
+      "telnum": "2343434",
+      "email": "av@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Awesome!",
+      "id": 1
+    },
+    {
+      "firstname": "Ankitha",
+      "lastname": "Gowda",
+      "telnum": "543442",
+      "email": "an@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "Nice!",
+      "id": 2
+    },
+    {
+      "firstname": "Akhilesh",
+      "lastname": "Kumar",
+      "telnum": "3231212",
+      "email": "av@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "Very good!",
+      "id": 3
+    },
+    {
+      "firstname": "Akhil",
+      "lastname": "Kumar",
+      "telnum": "1321412",
+      "email": "aa@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Fantastic!",
+      "id": 4
+    },
+    {
+      "firstname": "Akhilesh",
+      "lastname": "Kumar",
+      "telnum": "232342",
+      "email": "ak@gmail.com",
+      "agree": false,
+      "contacttype": "None",
+      "message": "Cleanly maintained!",
+      "id": 5
+    },
+    {
+      "firstname": "Anki",
+      "lastname": "Gowda",
+      "telnum": "543425",
+      "email": "anki@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "Awesome taste!",
+      "id": 6
+    },
+    {
+      "firstname": "Abhi",
+      "lastname": "Kumar",
+      "telnum": "435524",
+      "email": "ab@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "Very good!",
+      "id": 7
+    },
+    {
+      "firstname": "Akhil",
+      "lastname": "Kumar",
+      "telnum": "323231",
+      "email": "av@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Nice!",
+      "id": 8
+    },
+    {
+      "firstname": "Akhil",
+      "lastname": "Kumar",
+      "telnum": "34232",
+      "email": "aa@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "very tasty!",
+      "id": 9
+    },
+    {
+      "firstname": "Sumanija",
+      "lastname": "Rajan",
+      "telnum": "323231",
+      "email": "suma@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Awesome taste!",
+      "id": 10
+    },
+    {
+      "firstname": "Sumanija",
+      "lastname": "Rajan",
+      "telnum": "323231",
+      "email": "suma@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Maintained well!",
+      "id": 11
+    },
+    {
+      "firstname": "Ankitha",
+      "lastname": "Gowda",
+      "telnum": "324221",
+      "email": "an@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Nice!",
+      "id": 12
+    },
+    {
+      "firstname": "Jenny",
+      "lastname": "Dsouza",
+      "telnum": "543425",
+      "email": "jen@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Heavenly taste!",
+      "id": 13
+    },
+    {
+      "firstname": "Moni",
+      "lastname": "Gowda",
+      "telnum": "543442",
+      "email": "moni@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Neat!",
+      "id": 14
+    },
+    {
+      "firstname": "Jennifer",
+      "lastname": "R Dsouza",
+      "telnum": "543425",
+      "email": "jen@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Not bad!",
+      "id": 15
+    },
+    {
+      "firstname": "Nikhil",
+      "lastname": "Kumar",
+      "telnum": "2343434",
+      "email": "nik@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Could be improved.",
+      "id": 16
+    },
+    {
+      "firstname": "Sharanya",
+      "lastname": "Shindhe",
+      "telnum": "543425",
+      "email": "sharu@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Great!",
+      "id": 17
+    }
+  ]
 }

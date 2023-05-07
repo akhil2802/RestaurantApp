@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Feedback, ContactType } from '../shared/feedback';
 import { flyInOut } from '../animations/app.animation';
 
+import { FeedbackService } from '../services/feedback.service';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -23,6 +25,13 @@ export class ContactComponent implements OnInit {
   feedback!: Feedback;
   contactType = ContactType;
   @ViewChild('fform') feedbackFormDirective;
+
+  errorMessage!: string;
+  feedbackConfirm!: Feedback;
+  submitFlag = false;
+  confirmFlag = false;
+
+  visibility = 'shown';
 
   formErrors = {
     'firstname': '',
@@ -52,7 +61,7 @@ export class ContactComponent implements OnInit {
     },
   };
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private feedbackService: FeedbackService) { 
     this.createForm();
   }
 
@@ -71,14 +80,20 @@ export class ContactComponent implements OnInit {
     });
 
     this.feedbackForm.valueChanges
-      .subscribe(data => this.onValueChanged(data));
+      .subscribe({
+        next: data => this.onValueChanged(data),
+      error: errmess => this.errorMessage = errmess});
 
     this.onValueChanged(); // (re)set validation messages now
   }
 
   onSubmit() {
+    this.submitFlag = true;
     this.feedback = this.feedbackForm.value;
-    // console.log(this.feedback);
+    this.feedbackService.submitFeedback(this.feedback).subscribe({
+      next: confirm => { this.feedbackConfirm = confirm; this.confirmFlag = true;},
+      error: errmess => { this.feedback = null as any; this.feedbackConfirm = null as any; this.errorMessage = <any>errmess; }
+    });
     this.feedbackForm.reset({
       firstname: '',
       lastname: '',
@@ -88,6 +103,8 @@ export class ContactComponent implements OnInit {
       contacttype: 'None',
       message: ''
     });
+
+    setTimeout(() => {this.submitFlag = false; this.confirmFlag = false; }, 5000);
     this.feedbackFormDirective.resetForm();
   }
 

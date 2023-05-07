@@ -20,5 +20,8 @@
   "homepage": "https://github.com/akhil2802/RestaurantApp#readme",
   "devDependencies": {
     "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "ngx-restangular": "^1.0.0"
   }
 }
